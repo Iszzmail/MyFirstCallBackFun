@@ -1,0 +1,33 @@
+//My First Call Back
+
+
+const checkInput = (cb, ...numbers) => {
+  let l = numbers.length;
+  let arr = [];
+
+  if (l > 1) {
+    for (let i = 0; i < numbers.length; i++) {
+      arr.push(numbers[i]);
+    }
+
+    cb(arr);
+  } else {
+    cb(l);
+  }
+};
+
+const check = (a) => {
+  console.log(a);
+  if (a[0] === undefined) {
+    console.log("enter any number");
+    return;
+  } else {
+    let sum = 0;
+    for (let i of a) {
+      sum = sum + i;
+    }
+    console.log(sum);
+  }
+};
+
+checkInput(check, 1, 2, 3);
